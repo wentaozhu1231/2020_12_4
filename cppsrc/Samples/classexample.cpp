@@ -31,7 +31,7 @@ ClassExample::ClassExample(const Napi::CallbackInfo& info) : Napi::ObjectWrap<Cl
     Napi::Object object_parent = info[0].As<Napi::Object>();
     ClassExample* example_parent = Napi::ObjectWrap<ClassExample>::Unwrap(object_parent);
     ActualClass* parent_actual_class_instance = example_parent->GetInternalInstance();
-    this->actualClass_ = new ActualClass(parent_actual_class_instance->getValue());
+    this->actualClass_ = new ActualClass(parent_actual_class_instance->get_value());
     return;
   }
 
@@ -43,7 +43,7 @@ Napi::Value ClassExample::GetValue(const Napi::CallbackInfo& info) {
   Napi::Env env = info.Env();
   Napi::HandleScope scope(env);
 
-  double num = this->actualClass_->getValue();
+  double num = this->actualClass_->get_value();
   return Napi::Number::New(env, num);
 }
 

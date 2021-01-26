@@ -1,16 +1,16 @@
 #include "actualclass.h"
 
-ActualClass::ActualClass(double value){
+ActualClass::ActualClass(const double&value){
     this->value_ = value;
 }
 
-double ActualClass::getValue()
+double ActualClass::get_value()const
 {
   return this->value_;
 }
 
-double ActualClass::add(double toAdd)
+double ActualClass::add(const double& to_add)
 {
-  this->value_ += toAdd;
+  this->value_ += to_add;
   return this->value_;
 }

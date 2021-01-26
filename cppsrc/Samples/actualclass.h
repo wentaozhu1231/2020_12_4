@@ -1,8 +1,8 @@
 class ActualClass {
  public:
-  ActualClass(double value);
-  double getValue();
-  double add(double toAdd);
+  ActualClass(const double&value);
+  double get_value()const;
+  double add(const double& to_add);
  private:
   double value_;
 };

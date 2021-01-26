@@ -16,11 +16,11 @@ namespace functionexample {
     std::string hello();
     Napi::String HelloWrapped(const Napi::CallbackInfo& info);
 
-    int add(int a, int b);
+    int add(const int&a, const int&b);
     Napi::Number AddWrapped(const Napi::CallbackInfo& info);
 
 
-    double processImages(std::string PathName);
+    double process_images(const std::string&path_name);
     
     Napi::Number ImageWrapped(const Napi::CallbackInfo& info);
 

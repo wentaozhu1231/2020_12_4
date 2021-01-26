@@ -2,12 +2,12 @@
 
 std::string functionexample::hello() { return "Hello World"; }
 
-int functionexample::add(int a, int b) { return a + b; }
+int functionexample::add(const int&a,const int&b) { return a + b; }
 
-double functionexample::processImages(std::string PathName) {
+double functionexample::process_images(const std::string&path_name) {
   DcmFileFormat file;
 
-  OFCondition status1 = file.loadFile(PathName.c_str());
+  OFCondition status1 = file.loadFile(path_name.c_str());
 
   DcmDataset* dataset = file.getDataset();
   E_TransferSyntax xfer = dataset->getOriginalXfer();
@@ -105,7 +105,7 @@ Napi::Number functionexample::ImageWrapped(const Napi::CallbackInfo& info) {
   }
   Napi::String first = info[0].As<Napi::String>();
 
-  double returnValue = functionexample::processImages(first.ToString());
+  double returnValue = functionexample::process_images(first.ToString());
 
   return Napi::Number::New(env, returnValue);
 }
