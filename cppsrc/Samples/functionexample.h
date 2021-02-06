@@ -19,11 +19,12 @@ namespace functionexample {
     int add(const int&a, const int&b);
     Napi::Number AddWrapped(const Napi::CallbackInfo& info);
 
-
+    template<int x>
     double process_images(const std::string&path_name);
     
-    Napi::Number ImageWrapped(const Napi::CallbackInfo& info);
+    Napi::Number SymmetryWrapped(const Napi::CallbackInfo& info);
 
+    Napi::Number FlatnessWrapped(const Napi::CallbackInfo& info);
 
     Napi::Object Init(Napi::Env env, Napi::Object exports);
     
