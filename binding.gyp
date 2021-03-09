@@ -1,6 +1,6 @@
 {
     "targets": [{
-        "target_name": "testaddon",
+        "target_name": "qcsNode",
         "cflags!": ["-fno-exceptions"],
         "cflags_cc!": ["-fno-exceptions"],
         "sources": [
@@ -30,6 +30,7 @@
             'ofstd.lib',
             'oflog.lib',
             'ade.lib',
+
             'IlmImfd.lib',
             'ittnotifyd.lib',
             'libjpeg-turbod.lib',
@@ -39,20 +40,26 @@
             'libtiffd.lib',
             'libwebpd.lib',
             'opencv_calib3d450d.lib',
-            'opencv_core450d.lib',
+
+            'opencv_core450.lib',
+            
             'opencv_dnn450d.lib',
             'opencv_features2d450d.lib',
             'opencv_flann450d.lib',
             'opencv_gapi450d.lib',
-            'opencv_highgui450d.lib',
-            'opencv_imgcodecs450d.lib',
-            'opencv_imgproc450d.lib',
+
+            'opencv_highgui450.lib',
+            'opencv_imgcodecs450.lib',
+            'opencv_imgproc450.lib',
+
             'opencv_ml450d.lib',
             'opencv_objdetect450d.lib',
             'opencv_photo450d.lib',
             'opencv_stitching450d.lib',
             'opencv_video450d.lib',
             'opencv_videoio450d.lib',
+
+
             'quircd.lib',
             'zlibd.lib',
             'netapi32.lib',
