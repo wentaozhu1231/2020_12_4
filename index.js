@@ -1,19 +1,13 @@
-const testAddon = require('./build/Release/testaddon.node');
-console.log('addon',testAddon);
-console.log('hello ', testAddon.hello());
-console.log('add ', testAddon.add(5, 10));
+const qcsNode = require('./qcsNode.node');
 
-const prevInstance = new testAddon.ClassExample(4.3);
-console.log('Initial value : ', prevInstance.getValue());
-console.log('After adding 3.3 : ', prevInstance.add(3.3));
-
-const newFromExisting = new testAddon.ClassExample(prevInstance);
-
-console.log('Testing class initial value for derived instance');
-console.log(newFromExisting.getValue());
-
-
-const value = "F:\\QC_data\\RI.1.3.46.423632.131000.1606839311.17.dcm";
-console.log('symmetry of this graph is:',testAddon.print(value));
-
-module.exports = testAddon;
+//const value = "F:\\QC_data\\RI.1.3.46.423632.131000.1606838965.12.dcm";
+//const value = "F:\QC_data\RI.1.3.46.423632.131000.1606838965.12.dcm";
+const value1 = "./RI.1.3.46.423632.131000.1606838764.9.dcm";
+const value2 = "./RI.1.3.46.423632.131000.1606839391.18.dcm";
+console.log('symmetry of this graph is:',qcsNode.get_symmetry(value1));
+console.log('flatness of this graph is:',qcsNode.get_flatness(value1));
+console.log('penumbra of this graph is:',qcsNode.get_penumbra(value1));
+console.log('fwhm of this graph is:',qcsNode.get_fwhm(value1));
+console.log('angle of this graph is:',qcsNode.get_angle(value1,value2));
+console.log('center distance of this graph is:',qcsNode.get_centerDistance(value1,value2));
+module.exports = qcsNode;
